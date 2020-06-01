@@ -1,0 +1,1306 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.cs.le.ac.uk/rdf#"
+     xml:base="http://www.cs.le.ac.uk/rdf"
+     xmlns:Res="http://www.cs.le.ac.uk/rdf#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.cs.le.ac.uk/rdf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#ComposedItemsLike -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cs.le.ac.uk/rdf#ComposedItemsLike">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Alcoholic_Items"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Maintained_By -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cs.le.ac.uk/rdf#Maintained_By">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantTeam"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Sustained_By -->
+
+    <owl:AnnotationProperty rdf:about="http://www.cs.le.ac.uk/rdf#Sustained_By">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Staff"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Prepare -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#Prepare">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Chef"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantMenu"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Provides -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#Provides">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#Feedback"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#chooseServcie -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#chooseServcie">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantServices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#consistOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#consistOf">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantMenu"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#gives -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#gives">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#Feedback"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#givesOrderto -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#givesOrderto">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Waiter"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#Chef"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#Waiter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasDiscount_On -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasDiscount_On">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#BrandLoyalistsCustomer"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cs.le.ac.uk/rdf#BrandLoyalistsCustomer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#payBy"/>
+                        <owl:allValuesFrom rdf:resource="http://www.cs.le.ac.uk/rdf#ModeOfPayments"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasPaid -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasPaid">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hascreate -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#hascreate">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#Order"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#knows -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#knows">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#linkedto -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#linkedto">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Order"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#Order"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#locatedAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#locatedAt">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#makeUse_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#makeUse_of">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#BrandLoyalistsCustomer"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantServices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#manages -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#manages">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Manager"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#notcookedwith -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#notcookedwith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Animal_Based_Items"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#Plant_Based_Items"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#notesdown -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#notesdown">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Waiter"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#Order"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#orderItems_from -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#orderItems_from">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantMenu"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#ownsBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#ownsBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#Owner"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#payBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#payBy">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#ModeOfPayments"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#receives -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#receives">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#sharedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#sharedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Alcoholic_Items"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#using_transactiontype -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#using_transactiontype">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#ModeOfPayments"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#utilize -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#utilize">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#GuestCustomer"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantServices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#workswith -->
+
+    <owl:ObjectProperty rdf:about="http://www.cs.le.ac.uk/rdf#workswith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Chef"/>
+        <rdfs:range rdf:resource="http://www.cs.le.ac.uk/rdf#Porter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#cust_name_onBill -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#cust_name_onBill">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasAge">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasBillAmount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasBillAmount">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasBillID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasBillID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasCardNo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasCardNo">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Card_Payment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasCityname -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasCityname">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantLocation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasCustNameon_Bill -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasCustNameon_Bill">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasDiscount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasDiscount">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#GuestCustomer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasExpiryDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasExpiryDate">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Card_Payment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasItem -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasItem">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Alcoholic_Items"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Animal_Based_Items"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Dessert_Menu"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Non-Alcoholic_Items"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Plant_Based_Items"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasName">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasOwnerName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasOwnerName">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Owner"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasSalary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasSalary">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Waiter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hascustname -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hascustname">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Order"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasitemname -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasitemname">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Order"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasorderid -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasorderid">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Order"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#hasserviceslike -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#hasserviceslike">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantServices"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#name">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#onItemID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#onItemID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#onItem_Ratingis -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#onItem_Ratingis">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#on_Item_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#on_Item_name">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#paycash -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#paycash">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#Cash"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#provideOTP_To_authenticate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#provideOTP_To_authenticate">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#E-Wallets"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#serviceId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cs.le.ac.uk/rdf#serviceId">
+        <rdfs:domain rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantServices"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Alcoholic_Items -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Alcoholic_Items">
+        <rdfs:subClassOf rdf:resource="http://www.cs.le.ac.uk/rdf#Drinkable_Menu"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#sharedBy"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Animal_Based_Items -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Animal_Based_Items">
+        <rdfs:subClassOf rdf:resource="http://www.cs.le.ac.uk/rdf#Edible_Menu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Bill -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Bill">
+        <rdfs:comment>Bill class consists of bill id , custname and bill amount and Bill class is also related to order and customer class</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#BrandLoyalistsCustomer -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#BrandLoyalistsCustomer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#Provides"/>
+                        <owl:someValuesFrom rdf:resource="http://www.cs.le.ac.uk/rdf#Feedback"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#hasDiscount_On"/>
+                <owl:someValuesFrom rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#hasDiscount_On"/>
+                        <owl:someValuesFrom rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Card_Payment -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Card_Payment">
+        <rdfs:subClassOf rdf:resource="http://www.cs.le.ac.uk/rdf#ModeOfPayments"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#payBy"/>
+                <owl:hasValue rdf:resource="http://www.cs.le.ac.uk/rdf#Credit_Card"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#payBy"/>
+                <owl:hasValue rdf:resource="http://www.cs.le.ac.uk/rdf#Debit_Card"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Cash -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Cash">
+        <rdfs:subClassOf rdf:resource="http://www.cs.le.ac.uk/rdf#ModeOfPayments"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#payBy"/>
+                <owl:hasValue rdf:resource="http://www.cs.le.ac.uk/rdf#Amount"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Chef -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Chef">
+        <rdfs:subClassOf rdf:resource="http://www.cs.le.ac.uk/rdf#Kitchen_Staff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Dessert_Menu -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Dessert_Menu">
+        <rdfs:subClassOf rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantMenu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Drinkable_Menu -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Drinkable_Menu">
+        <rdfs:subClassOf rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantMenu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#E-Wallets -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#E-Wallets">
+        <rdfs:subClassOf rdf:resource="http://www.cs.le.ac.uk/rdf#ModeOfPayments"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#payBy"/>
+                <owl:hasValue rdf:resource="http://www.cs.le.ac.uk/rdf#PhoneBanking_OTP"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Edible_Menu -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Edible_Menu">
+        <rdfs:subClassOf rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantMenu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Feedback -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Feedback">
+        <rdfs:comment>feedback class is used to get the ratings given by the customer. it consists of properties like Itemid, itemname and item rating given by customer</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#GuestCustomer -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#GuestCustomer">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#hasDiscount"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Kitchen_Staff -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Kitchen_Staff">
+        <rdfs:subClassOf rdf:resource="http://www.cs.le.ac.uk/rdf#Staff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Manager -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Manager">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cs.le.ac.uk/rdf#RestaurantTeam"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#manages"/>
+                        <owl:allValuesFrom rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#manages"/>
+                <owl:allValuesFrom rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantCustomers"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#ModeOfPayments -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#ModeOfPayments">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cs.le.ac.uk/rdf#Card_Payment"/>
+                    <rdf:Description rdf:about="http://www.cs.le.ac.uk/rdf#Cash"/>
+                    <rdf:Description rdf:about="http://www.cs.le.ac.uk/rdf#E-Wallets"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Modeof payments class consistes of different subclass like card_payment, cash and E-wallets this three mode of payment classe are used by customer to make bill payment</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Non-Alcoholic_Items -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Non-Alcoholic_Items">
+        <rdfs:subClassOf rdf:resource="http://www.cs.le.ac.uk/rdf#Drinkable_Menu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Order -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Order">
+        <rdfs:comment>Order Class is used for storing order given by the customer . order class has properties like orderid and ordered item name and the customer who ordered the items</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Owner -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Owner">
+        <rdfs:comment>owner class contain owner details of the restaurant</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Plant_Based_Items -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Plant_Based_Items">
+        <rdfs:subClassOf rdf:resource="http://www.cs.le.ac.uk/rdf#Edible_Menu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Porter -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Porter">
+        <rdfs:subClassOf rdf:resource="http://www.cs.le.ac.uk/rdf#Kitchen_Staff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Restaurant -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Restaurant">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#locatedAt"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantLocation"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment>Restaurant class consists of owner details and restuarnt location address details</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#RestaurantCustomers -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#RestaurantCustomers">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cs.le.ac.uk/rdf#BrandLoyalistsCustomer"/>
+                    <rdf:Description rdf:about="http://www.cs.le.ac.uk/rdf#GuestCustomer"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#orderItems_from"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantMenu"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#hasPaid"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#Provides"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.cs.le.ac.uk/rdf#Feedback"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Restaurant customers are of two types brandloyalist customers and guest customers</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#RestaurantLocation -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#RestaurantLocation"/>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#RestaurantMenu -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#RestaurantMenu">
+        <rdfs:comment>restaurant menu consists of different type of menu items like desserts, Drinks and fooditems.where drinks include both alcoholic items and fooditems include both veg and non veg foods</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#RestaurantServices -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#RestaurantServices">
+        <rdfs:comment>restaurant provides two types of services buffet service and waiter service</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#RestaurantTeam -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#RestaurantTeam">
+        <rdfs:comment>Restaurant Team consists of manager and staff. where manager manges the customer and staff are of diiferent types where waiter will take order from customer and chef prepare the menu items and porter will help chef</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Staff -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Staff">
+        <rdfs:subClassOf rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantTeam"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Waiter -->
+
+    <owl:Class rdf:about="http://www.cs.le.ac.uk/rdf#Waiter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cs.le.ac.uk/rdf#Staff"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#notesdown"/>
+                        <owl:allValuesFrom rdf:resource="http://www.cs.le.ac.uk/rdf#Order"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cs.le.ac.uk/rdf#hasSalary"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.cs.le.ac.uk/rdf#Staff"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Amount -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Amount">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Cash"/>
+        <paycash rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</paycash>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#BfService -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#BfService">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantServices"/>
+        <hasserviceslike rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BuffetService</hasserviceslike>
+        <serviceId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BF</serviceId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Bill_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Bill_1">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+        <hasBillAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#int">95</hasBillAmount>
+        <hasBillID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bill1</hasBillID>
+        <hasCustNameon_Bill rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sai</hasCustNameon_Bill>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Bill_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Bill_2">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+        <hasBillAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#int">95</hasBillAmount>
+        <hasBillID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bill2</hasBillID>
+        <hasCustNameon_Bill rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Keerthi</hasCustNameon_Bill>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Bill_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Bill_3">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+        <hasBillAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#int">150</hasBillAmount>
+        <hasBillID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bill3</hasBillID>
+        <hasCustNameon_Bill rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shresta</hasCustNameon_Bill>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Bill_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Bill_4">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+        <hasBillAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#int">135</hasBillAmount>
+        <hasBillID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bill4</hasBillID>
+        <hasCustNameon_Bill rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasCustNameon_Bill>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Bill_5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Bill_5">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Bill"/>
+        <hasBillAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#int">200</hasBillAmount>
+        <hasBillID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bill5</hasBillID>
+        <hasCustNameon_Bill rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shresta</hasCustNameon_Bill>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Credit_Card -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Credit_Card">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Card_Payment"/>
+        <hasCardNo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XXXX-2345</hasCardNo>
+        <hasExpiryDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-17</hasExpiryDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Debit_Card -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Debit_Card">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Card_Payment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Desset_MenuItem1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Desset_MenuItem1">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Dessert_Menu"/>
+        <hasItem rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ice Cream</hasItem>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Drink_Menu_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Drink_Menu_1">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Alcoholic_Items"/>
+        <hasItem rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vodka</hasItem>
+        <ComposedItemsLike rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vodka</ComposedItemsLike>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Drink_Menu_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Drink_Menu_2">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Non-Alcoholic_Items"/>
+        <hasItem rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Orange Juice</hasItem>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#GuestCustomer1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#GuestCustomer1">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#GuestCustomer"/>
+        <Provides rdf:resource="http://www.cs.le.ac.uk/rdf#Rating3"/>
+        <chooseServcie rdf:resource="http://www.cs.le.ac.uk/rdf#BfService"/>
+        <using_transactiontype rdf:resource="http://www.cs.le.ac.uk/rdf#PhoneBanking_OTP"/>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shresta</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#GuestCustomer2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#GuestCustomer2">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#GuestCustomer"/>
+        <chooseServcie rdf:resource="http://www.cs.le.ac.uk/rdf#WaiterService"/>
+        <using_transactiontype rdf:resource="http://www.cs.le.ac.uk/rdf#Credit_Card"/>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maddineni</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Location -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Location">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantLocation"/>
+        <hasCityname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Leicester</hasCityname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#LoyalCustomer2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#LoyalCustomer2">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#BrandLoyalistsCustomer"/>
+        <Provides rdf:resource="http://www.cs.le.ac.uk/rdf#Rating2"/>
+        <chooseServcie rdf:resource="http://www.cs.le.ac.uk/rdf#BfService"/>
+        <hasPaid rdf:resource="http://www.cs.le.ac.uk/rdf#Bill_2"/>
+        <using_transactiontype rdf:resource="http://www.cs.le.ac.uk/rdf#Credit_Card"/>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sai</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Loyalcustomer1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Loyalcustomer1">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#BrandLoyalistsCustomer"/>
+        <Provides rdf:resource="http://www.cs.le.ac.uk/rdf#Rating1"/>
+        <chooseServcie rdf:resource="http://www.cs.le.ac.uk/rdf#BfService"/>
+        <hasPaid rdf:resource="http://www.cs.le.ac.uk/rdf#Bill_3"/>
+        <using_transactiontype rdf:resource="http://www.cs.le.ac.uk/rdf#Credit_Card"/>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Keerthi</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Non_Veg_Menu1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Non_Veg_Menu1">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Animal_Based_Items"/>
+        <hasItem rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chicken</hasItem>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#OwnerDetails -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#OwnerDetails">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Owner"/>
+        <hasOwnerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maddineni</hasOwnerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#PhoneBanking_OTP -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#PhoneBanking_OTP">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#E-Wallets"/>
+        <provideOTP_To_authenticate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></provideOTP_To_authenticate>
+        <provideOTP_To_authenticate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1234567</provideOTP_To_authenticate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Prepare_menu -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Prepare_menu">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Chef"/>
+        <Prepare rdf:resource="http://www.cs.le.ac.uk/rdf#Drink_Menu_1"/>
+        <Prepare rdf:resource="http://www.cs.le.ac.uk/rdf#Veg_Menu_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Rating1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Rating1">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Feedback"/>
+        <onItemID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Item1</onItemID>
+        <onItem_Ratingis rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</onItem_Ratingis>
+        <on_Item_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chicken</on_Item_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Rating2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Rating2">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Feedback"/>
+        <onItemID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Item2</onItemID>
+        <onItem_Ratingis rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</onItem_Ratingis>
+        <on_Item_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">paneer</on_Item_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Rating3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Rating3">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Feedback"/>
+        <onItemID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Item3</onItemID>
+        <onItem_Ratingis rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</onItem_Ratingis>
+        <on_Item_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chicken Biriyani</on_Item_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Restaurant_Details -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Restaurant_Details">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Restaurant"/>
+        <locatedAt rdf:resource="http://www.cs.le.ac.uk/rdf#Location"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#Veg_Menu_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#Veg_Menu_1">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Plant_Based_Items"/>
+        <hasItem rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Veg Biriyani</hasItem>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#WaiterService -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#WaiterService">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#RestaurantServices"/>
+        <hasserviceslike rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Waiterservice</hasserviceslike>
+        <serviceId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ws</serviceId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#credit_card -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#credit_card"/>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#order1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#order1">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Order"/>
+        <hascustname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shresta</hascustname>
+        <hasitemname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chicken</hasitemname>
+        <hasorderid rdf:datatype="http://www.w3.org/2001/XMLSchema#string">order1</hasorderid>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#order2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#order2">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Order"/>
+        <hascustname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shresta</hascustname>
+        <hasitemname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chicken</hasitemname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#order3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#order3">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Order"/>
+        <hascustname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shresta</hascustname>
+        <hasitemname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Paneer</hasitemname>
+        <hasorderid rdf:datatype="http://www.w3.org/2001/XMLSchema#string">order3</hasorderid>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#order4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#order4">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Order"/>
+        <hascustname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sai</hascustname>
+        <hasitemname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chicken</hasitemname>
+        <hasorderid rdf:datatype="http://www.w3.org/2001/XMLSchema#string">order4</hasorderid>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#order5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#order5">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Order"/>
+        <hascustname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">maddineni</hascustname>
+        <hasitemname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prawns</hasitemname>
+        <hasorderid rdf:datatype="http://www.w3.org/2001/XMLSchema#string">order5</hasorderid>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cs.le.ac.uk/rdf#salary -->
+
+    <owl:NamedIndividual rdf:about="http://www.cs.le.ac.uk/rdf#salary">
+        <rdf:type rdf:resource="http://www.cs.le.ac.uk/rdf#Waiter"/>
+        <hasSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2000</hasSalary>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
